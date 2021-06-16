@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker { 
-            image 'fugue/regula:v0.8.0' 
+            image 'fugue/regula:v0.9.1' 
             args '--entrypoint='
         }
     }
@@ -9,7 +9,8 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'mkdir reports'
-                sh 'cd 002 && regula run -u  --include policy/s3_bucket_prefix.rego --format junit tf > ../reports/output.xml'
+                sh 'cd 002'
+                sh 'regula run -u  --include policy/s3_bucket_prefix.rego --format junit tf > ../reports/output.xml'
             }
         }
     }
