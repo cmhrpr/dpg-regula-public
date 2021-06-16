@@ -6,8 +6,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'mkdir -p reports'
-                sh 'cd 002'
-                sh 'regula run -u  --include policy/s3_bucket_prefix.rego --format junit tf > output.xml'
+                sh 'cd 002 && regula run -u  --include policy/s3_bucket_prefix.rego --format junit tf > output.xml'
             }
         }
     }
