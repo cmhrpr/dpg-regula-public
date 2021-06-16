@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh 'mkdir -p reports'
                 sh 'cd 002'
-                sh 'regula run -u  --include policy/s3_bucket_prefix.rego --format junit tf > ../reports/output.xml'
+                sh 'regula run -u  --include policy/s3_bucket_prefix.rego --format junit tf > output.xml'
             }
         }
     }
