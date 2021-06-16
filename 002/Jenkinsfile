@@ -1,9 +1,6 @@
 pipeline {
     agent {
-        docker { 
-            image 'fugue/regula:v0.8.0' 
-            args '--entrypoint='
-        }
+        dockerfile true
     }
     stages {
         stage('Test') {

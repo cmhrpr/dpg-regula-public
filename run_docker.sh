@@ -1,0 +1,1 @@
+docker run -t -d -u 0:0 -w /workspace/regula-testing_master -v $(pwd):/workspace/regula-testing_master:rw,z   --entrypoint= fugue/regula:v0.9.1 cat
